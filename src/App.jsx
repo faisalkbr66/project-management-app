@@ -1,12 +1,13 @@
-import { Box, createTheme, CssBaseline, ThemeProvider, Typography } from "@mui/material";
 import {
-  createBrowserRouter,
-  Link,
-  RouterProvider
-} from 'react-router';
+  Box,
+  createTheme,
+  CssBaseline,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
+import { createBrowserRouter, Link, RouterProvider } from "react-router";
 
-import Pagination from './components/ui/Pagination';
-import Table from './components/ui/Table';
+import Dashboard from "./components/pages/dashboard/dashboard";
 
 const theme = createTheme({
   typography: {
@@ -14,56 +15,21 @@ const theme = createTheme({
   },
 });
 
-const router = createBrowserRouter([{
-  path : "/",
-  element: (
-    <Box>
-        <Typography variant="h1">Home</Typography>
-        <Link to={"/login"}>Login</Link>
-        <Table columns={[
-          {
-            id: 'tugas',
-            label: 'Tugas',
-          },
-          {
-            id:'status',
-            label:'Status'
-          }
-        ]} data={[
-          {
-            id:1,
-            tugas:'Tugas 1',
-            status:'Baru'
-          },
-          {
-            id:2,
-            tugas:'Tugas 2',
-            status:'Sedang Dikerjakan'
-          },
-          {
-            id:3,
-            tugas:'Tugas 3',
-            status:'Selesai'
-          },
-        ]} />
-
-        <Pagination count={10} onChange={(event, page) => {
-          console.log("page",page);
-        }} />
-    </Box>
-  )
-},{
-  path : "/login",
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/login",
     element: (
       <Box>
-          <Typography variant="h1">Login</Typography>
-          <Link to={"/"}>Kembali Ke Home</Link>
-        </Box>
-    )
-}
+        <Typography variant="h1">Login</Typography>
+        <Link to={"/"}>Kembali Ke Home</Link>
+      </Box>
+    ),
+  },
 ]);
-
-
 
 const App = () => {
   return (
