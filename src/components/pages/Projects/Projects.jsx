@@ -2,17 +2,13 @@ import { colors, Paper, Typography } from '@mui/material';
 
 import SidebarLayout from '@/components/layouts/SidebarLayout';
 
-const DetailProject = () => {
-   return (
+const Projects = () => {
+  return (
     <SidebarLayout
-      pageTitle="Detail Proyek"
+      pageTitle="Daftar Proyek"
       breadcrumbs={[
         {
           label: 'Daftar Proyek',
-          href: '/projects',
-        },
-        {
-          label: 'Agency Software Engineering',
         },
       ]}
     >
@@ -23,11 +19,11 @@ const DetailProject = () => {
         }}
       >
         <Typography>
-          Menampilkan detail proyek di sini
+          Menampilkan daftar proyek di sini
         </Typography>
       </Paper>
     </SidebarLayout>
   );
 };
 
-export default DetailProject;
+export default Projects;
