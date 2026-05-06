@@ -9,14 +9,14 @@ import dayjs from "dayjs";
 
 const Login = () => {
   const { control, watch } = useForm({
-    defaultValues:{
-      filterDate: dayjs()
-    }
+    defaultValues: {
+      filterDate: dayjs(),
+    },
   });
 
-  const username = watch('username');
-  const category = watch('category');
-  const filterDate = watch('filterDate');
+  const username = watch("username");
+  const category = watch("category");
+  const filterDate = watch("filterDate");
 
   console.log("username :", username);
   console.log("category :", category);

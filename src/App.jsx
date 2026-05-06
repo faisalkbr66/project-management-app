@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Login from "./components/pages/Auth/Login/Login";
 import Dashboard from "./components/pages/dashboard/dashboard";
+import DetailProject from "./components/pages/Projects/DetailProject/DetailProject";
 
 const theme = createTheme({
   typography: {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/projects/:id",
+    element: <DetailProject />,
   },
 ]);
 
