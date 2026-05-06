@@ -5,6 +5,7 @@ import {
   RouterProvider
 } from 'react-router';
 
+import Pagination from './components/ui/Pagination';
 import Table from './components/ui/Table';
 
 const theme = createTheme({
@@ -45,7 +46,11 @@ const router = createBrowserRouter([{
             status:'Selesai'
           },
         ]} />
-      </Box>
+
+        <Pagination count={10} onChange={(event, page) => {
+          console.log("page",page);
+        }} />
+    </Box>
   )
 },{
   path : "/login",

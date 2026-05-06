@@ -1,12 +1,12 @@
 import {
     Table as BaseTable,
     Box,
+    Paper,
     TableBody,
     TableCell,
     TableContainer,
     TableHead,
     TableRow,
-    Paper,
 } from '@mui/material'
 
 const Table = ({columns, data}) => {
