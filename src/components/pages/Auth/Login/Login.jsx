@@ -2,9 +2,16 @@ import { Paper, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 import Select from "../../../ui/Forms/Select";
+import TextField from "../../../ui/Forms/TextField";
 
 const Login = () => {
-  const { control } = useForm();
+  const { control, watch } = useForm();
+
+  const username = watch('username');
+  const category = watch('category');
+
+  console.log("username :",username);
+  console.log("category :",category);
 
   return (
     <Stack
@@ -19,10 +26,12 @@ const Login = () => {
           padding: 2,
         }}
       >
+        <TextField name={"username"} control={control} label={"Username"} defaultValue=""/>
         <Select
-          name={"kategori"}
+          name={"category"}
           control={control}
           label={"Pilih Kategori"}
+          defaultValue=""
           options={[
             {
               value: "Kategori-1",

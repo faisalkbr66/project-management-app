@@ -1,8 +1,4 @@
-import {
-  createTheme,
-  CssBaseline,
-  ThemeProvider
-} from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Login from "./components/pages/Auth/Login/Login";

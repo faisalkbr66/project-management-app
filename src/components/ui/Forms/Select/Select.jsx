@@ -43,7 +43,7 @@ const Select = ({
                 <MenuItem key={index} value={option.value}>
                   {option.label}
                 </MenuItem>
-                ))}
+              ))}
             </BaseSelect>
             <FormHelperText>{helperText}</FormHelperText>
           </FormControl>
