@@ -1,12 +1,11 @@
 import {
-  Box,
   createTheme,
   CssBaseline,
-  ThemeProvider,
-  Typography,
+  ThemeProvider
 } from "@mui/material";
-import { createBrowserRouter, Link, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 
+import Login from "./components/pages/Auth/Login/Login";
 import Dashboard from "./components/pages/dashboard/dashboard";
 
 const theme = createTheme({
@@ -22,12 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: (
-      <Box>
-        <Typography variant="h1">Login</Typography>
-        <Link to={"/"}>Kembali Ke Home</Link>
-      </Box>
-    ),
+    element: <Login />,
   },
 ]);
 
