@@ -1,7 +1,7 @@
-import { resolve } from 'path';
+import { resolve } from "path";
 
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,8 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       // eslint-disable-next-line no-undef
-      '@': resolve(__dirname, 'src'),
+      "@": resolve(__dirname, "src"),
     },
   },
-  base: '/',
+  base: "/",
 });

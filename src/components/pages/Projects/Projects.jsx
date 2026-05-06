@@ -1,6 +1,6 @@
-import { colors, Paper, Typography } from '@mui/material';
+import { colors, Paper, Typography } from "@mui/material";
 
-import SidebarLayout from '@/components/layouts/SidebarLayout';
+import SidebarLayout from "@/components/layouts/SidebarLayout";
 
 const Projects = () => {
   return (
@@ -8,7 +8,7 @@ const Projects = () => {
       pageTitle="Daftar Proyek"
       breadcrumbs={[
         {
-          label: 'Daftar Proyek',
+          label: "Daftar Proyek",
         },
       ]}
     >
@@ -18,9 +18,7 @@ const Projects = () => {
           background: colors.lightBlue[100],
         }}
       >
-        <Typography>
-          Menampilkan daftar proyek di sini
-        </Typography>
+        <Typography>Menampilkan daftar proyek di sini</Typography>
       </Paper>
     </SidebarLayout>
   );

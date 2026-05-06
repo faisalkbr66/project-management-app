@@ -1,37 +1,44 @@
-import { AccountCircle } from '@mui/icons-material';
-import { Box, Stack } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import { AccountCircle } from "@mui/icons-material";
+import { Box, Stack } from "@mui/material";
+import { grey } from "@mui/material/colors";
 
-import Dropdown from '@/components/ui/Dropdown';
+import Dropdown from "@/components/ui/Dropdown";
+
+import session from "@/utils/session";
+
+import { useNavigate } from 'react-router';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
         padding: 1,
         borderBottom: `1px solid ${grey[300]}`,
-        background: '#ffffff',
-        position: 'fixed',
+        background: "#ffffff",
+        position: "fixed",
         top: 0,
         left: 0,
-        width: '100%',
+        width: "100%",
         zIndex: 1100,
       }}
     >
-      <Stack justifyContent={'center'} alignItems={'flex-end'} paddingX={1}>
+      <Stack justifyContent={"center"} alignItems={"flex-end"} paddingX={1}>
         <Dropdown
           icon={<AccountCircle />}
           options={[
             {
-              label: 'Profile',
+              label: "Profile",
               onClick() {
-                console.log('handle navigate to profile');
+                console.log("handle navigate to profile");
               },
             },
             {
-              label: 'Logout',
+              label: "Logout",
               onClick() {
-                console.log('handle logout');
+                session.clearSession();
+                navigate("/login");
               },
             },
           ]}

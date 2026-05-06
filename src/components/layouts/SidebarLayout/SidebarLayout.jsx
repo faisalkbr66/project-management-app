@@ -1,17 +1,17 @@
-import { Box, Breadcrumbs, Link, Typography } from '@mui/material';
-import { useNavigate } from 'react-router';
+import { Box, Breadcrumbs, Link, Typography } from "@mui/material";
+import { useNavigate } from "react-router";
 
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
-const SidebarLayout = ({ children, pageTitle = '', breadcrumbs = [] }) => {
+const SidebarLayout = ({ children, pageTitle = "", breadcrumbs = [] }) => {
   const navigate = useNavigate();
 
   const renderBreadcrumbs = () => {
     return breadcrumbs.map((breadcrumb, index) => {
       if (index === breadcrumbs.length - 1) {
         return (
-          <Typography key={index} sx={{ color: 'text.primary' }}>
+          <Typography key={index} sx={{ color: "text.primary" }}>
             {breadcrumb.label}
           </Typography>
         );
@@ -22,7 +22,7 @@ const SidebarLayout = ({ children, pageTitle = '', breadcrumbs = [] }) => {
           underline="hover"
           color="inherit"
           sx={{
-            cursor: 'pointer',
+            cursor: "pointer",
           }}
           onClick={() => {
             navigate(breadcrumb.href);
@@ -38,15 +38,15 @@ const SidebarLayout = ({ children, pageTitle = '', breadcrumbs = [] }) => {
       <Navbar />
       <Sidebar />
       <Box
-        component={'main'}
+        component={"main"}
         sx={{
           marginLeft: 30,
-          marginTop: '4rem',
+          marginTop: "4rem",
           paddingTop: 3,
           paddingRight: 3,
           flexGrow: 1,
           flexShrink: 0,
-          position: 'relative',
+          position: "relative",
         }}
       >
         <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
