@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import authLoader from "@/components/layouts/AuthLayout/AuthLayout.loader";
 import sidebarLoader from "@/components/layouts/SidebarLayout/SidebarLayout.loader";
 import Login from "@/components/pages/Auth/Login";
-import Dashboard from "@/components/pages/Dashboard";
+import Dashboard from "@/components/pages/dashboard";
 import Projects from "@/components/pages/Projects";
 import DetailProject from "@/components/pages/Projects/DetailProject";
 import Settings from "@/components/pages/Settings";
