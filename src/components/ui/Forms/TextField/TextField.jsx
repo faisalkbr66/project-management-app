@@ -1,13 +1,14 @@
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   FormControl,
+  FormHelperText,
   IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
-} from '@mui/material';
-import { useEffect, useState } from 'react';
-import { Controller } from 'react-hook-form';
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { Controller } from "react-hook-form";
 
 const TextField = ({
   control,
@@ -19,12 +20,11 @@ const TextField = ({
   id,
   ...props
 }) => {
-
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    setShowPassword(secureText)
-  }, [secureText])
+    setShowPassword(secureText);
+  }, [secureText]);
 
   return (
     <Controller
@@ -37,24 +37,21 @@ const TextField = ({
       }) => {
         return (
           <FormControl
-            sx={{
-              marginBottom: 2,
-            }}
+            fullWidth
+            error={Boolean(error)}
+            sx={{ marginBottom: 2 }}
             variant="outlined"
           >
             <InputLabel htmlFor={id}>{label}</InputLabel>
+
             <OutlinedInput
               {...props}
               id={id}
-              type={showPassword ? 'password' : 'text'}
-              fullWidth
+              type={showPassword ? "password" : "txt"}
               label={label}
-              variant="outlined"
-              value={value}
+              value={value || ""}
               onBlur={onBlur}
               onChange={onChange}
-              helperText={error?.message ? error?.message : helperText}
-              error={Boolean(error)}
               endAdornment={
                 secureText ? (
                   <InputAdornment position="end">
@@ -65,11 +62,11 @@ const TextField = ({
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
-                ) : (
-                  <></>
-                )
+                ) : null
               }
             />
+
+            <FormHelperText>{error?.message || helperText}</FormHelperText>
           </FormControl>
         );
       }}
